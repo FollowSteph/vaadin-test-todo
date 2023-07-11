@@ -3,7 +3,9 @@ package com.example.application.views.main;
 import java.util.Objects;
 
 public class Person {
+    private static int counter = 0;
     private String name;
+//    private int id = counter++;
 
     public Person(String name) {
         this.name = name;
@@ -20,6 +22,7 @@ public class Person {
     @Override
     public String toString() {
         return name;
+//        return Integer.toString(id);
     }
 
     @Override
