@@ -24,13 +24,13 @@ public class MainView extends HorizontalLayout {
         name = new TextField("Your name");
         sayHello = new Button("Say hello");
         sayHello.addClickListener(e -> {
-//            Notification.show("Hello " + name.getValue());
             Notification.show("Hello " + (personComboBox.getValue() == null ? "Null" : personComboBox.getValue().getName()));
         });
         sayHello.addClickShortcut(Key.ENTER);
 
         List<Person> people = generateListOfPeople();
         personComboBox = new ComboBox<>("Select person", people);
+        // Why is this triggered by the UI with no action other than a click anywhere in the browser???
         personComboBox.addValueChangeListener(event -> System.out.println("Selected person: " + event.getValue()));
 
         setMargin(true);
