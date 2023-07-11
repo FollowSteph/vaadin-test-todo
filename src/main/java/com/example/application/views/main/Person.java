@@ -5,7 +5,7 @@ import java.util.Objects;
 public class Person {
     private static int counter = 0;
     private String name;
-//    private int id = counter++;
+    private int id = counter++;
 
     public Person(String name) {
         this.name = name;
@@ -16,7 +16,8 @@ public class Person {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Person person = (Person) o;
-        return Objects.equals(name, person.name) && Objects.equals(name, person.name);
+//        return Objects.equals(name, person.name) && Objects.equals(name, person.name);
+        return id == person.id;
     }
 
     @Override
