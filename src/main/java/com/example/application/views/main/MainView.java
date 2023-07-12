@@ -32,6 +32,7 @@ public class MainView extends HorizontalLayout {
         personComboBox = new ComboBox<>("Select person", people);
         // Why is this triggered by the UI with no action other than a click anywhere in the browser???
         personComboBox.addValueChangeListener(event -> System.out.println("Selected person: " + event.getValue()));
+        personComboBox.setItemLabelGenerator(person -> person.getName());
 
         setMargin(true);
         setVerticalComponentAlignment(Alignment.END, name, sayHello);
